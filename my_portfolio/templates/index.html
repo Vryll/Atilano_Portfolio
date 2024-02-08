@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static '../static/dependencies/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/index.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/style_home.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/about-me.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/platform-cards.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/my-works.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/my-skills.css' %}">
+
+</head>
+<body>
+    <!-- This is for NAVBAR -->
+        <header>
+            {% include 'components/header/navbar.html' %}
+        </header>
+    <!-- end line for NAVBAR -->
+
+    
+    <!-- HOME PAGE -->
+    <div class="container">
+        <section class="home-page">
+            <div class="row home-text">
+                <div class="col-md-6 order-md-1 order-2 mx-auto">
+                    <!-- Content for the first column -->
+                    <h2>Hey There! I'm Vryll</h2>
+                    <h3>&lt; Python Backend Developer &gt;</Python></h3>
+                    <p>“Highly motivated IT student specializing 
+                        in backend development. Adaptable to diverse 
+                        working environments, consistently delivering 
+                        reliable and efficient solutions that exceed 
+                        client and user expectations.”
+                    </p>
+                    
+                    <div class="home-btn">
+                        <a class="btn">Learn More About Me</a>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 order-1 mx-auto">
+                    <!-- Content for the second column -->
+                    <img src="../media/home-page-img.png" class="img-fluid img" alt="Atilano-image">
+                </div>
+
+            </div>
+        </section>
+    </div>
+      
+    <!-- END OF HOME PAGE -->
+    
+
+    <!-- ABOUT ME PAGE -->
+    <div class="container">
+        <section class="about-me-page">
+            <div class="about-me">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                </div>
+
+                <div class="col about-me-content">
+                    <p>
+                        I am <b>Vryll C. Atilano</b>, a 21-year-old <b>backend developer</b> from Zamboanga City, Philippines. 
+                        My dedication to both literature and programming fuels my drive for excellence. I specialize 
+                        in Python for backend development and Flutter for frontend development. My professional journey 
+                        has equipped me with extensive experience across various platforms including web, desktop, and 
+                        mobile, garnered through my successful engagements in past projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END OF ABOUT ME PAGE -->
+
+    <!-- MY SKILLS PAGE-->
+    <div class="container">
+        <section class="my-skills-page">
+            <div class="my-skills">
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                </div>
+                <div class="col my-skills-content text-center"> <!-- Added class "text-center" -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- END OF MY SKILLS PAGE -->
+
+    <!-- WORKS PAGE -->
+    <div class="container">
+        <section class="my-works-page">
+            <div class="my-works">
+                <div class="section-title">
+                    <h2>Projects</h2>
+                </div>
+                <div class="col my-works-content text-center"> <!-- Added class "text-center" -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END OF WORKS PAGE -->
+
+    <script src="{% static '../static/dependencies/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

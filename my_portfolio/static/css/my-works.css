@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.my-works-page{
+    height: 100vh;
+    flex: 1;
+}
+
+.card {
+    border: 2px solid #1e1e24;
+    border-radius: 10px;
+    color: #f7f7f2;
+    background-color: #1e1e24;
+}
+
+@media (min-width: 576px){
+    .my-works-page{
+        margin-top: 200px;
+    }
+}
