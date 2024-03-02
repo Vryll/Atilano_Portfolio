@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{% static '../static/css/platform-cards.css' %}">
     <link rel="stylesheet" href="{% static '../static/css/my-works.css' %}">
     <link rel="stylesheet" href="{% static '../static/css/my-skills.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/contact-me.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -39,7 +41,7 @@
                     </p>
                     
                     <div class="home-btn">
-                        <a class="btn">Learn More About Me</a>
+                        <a href="#" class="btn">Learn More About Me</a>
                     </div>
                 </div>
                 <div class="col-md-6 order-md-2 order-1 mx-auto">
@@ -50,27 +52,34 @@
             </div>
         </section>
     </div>
-      
     <!-- END OF HOME PAGE -->
     
 
     <!-- ABOUT ME PAGE -->
-    <div class="container">
+    <div class="w-100 about-me-container" style="background-color: #1e1e24; min-height: 50rem;" >
         <section class="about-me-page">
             <div class="about-me">
-                <div class="section-title">
-                    <h2>About Me</h2>
-                </div>
-
-                <div class="col about-me-content">
-                    <p>
-                        I am <b>Vryll C. Atilano</b>, a 21-year-old <b>backend developer</b> from Zamboanga City, Philippines. 
-                        My dedication to both literature and programming fuels my drive for excellence. I specialize 
-                        in Python for backend development and Flutter for frontend development. My professional journey 
-                        has equipped me with extensive experience across various platforms including web, desktop, and 
-                        mobile, garnered through my successful engagements in past projects.
-                    </p>
-                </div>
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <img src="../media/Atilanond.png" class="img-fluid about-me-img" alt="Atilano-image">
+                      </div>
+                      <div class="col about-me-content">
+                        <h2>About Me</h2>
+                        <h3>Hi! I'm Vryll Atilano</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.
+                        </p>
+                        <div class="home-btn">
+                            <a href="#"><div class="dl-cv-btn">Download CV</div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </section>
     </div>
@@ -79,35 +88,37 @@
     <!-- MY SKILLS PAGE-->
     <div class="container">
         <section class="my-skills-page">
-            <div class="my-skills">
-                <div class="section-title">
-                    <h2>My Skills</h2>
-                </div>
-                <div class="col my-skills-content text-center"> <!-- Added class "text-center" -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
+            <div class="section-title" style="text-align: center;">
+                <h2>My Skills</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="col text-center my-skills-content"> <!-- Added class "text-center" -->
+                <div class="container" >
+                    <div class="row">
+                        <div class="col">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
+                                <div class="card-body text-center">
+                                    <h4>PHP</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../media/python.png" class="card-img-top skill-img" alt="...">
+                                <div class="card-body">
+                                    <h4>PYTHON</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 20rem;">
+                                <img src="../media/flutter.png" class="card-img-top skill-img" alt="...">
+                                <div class="card-body">
+                                    <h4>FLUTTER</h4>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
                         </div>
@@ -123,43 +134,86 @@
     <div class="container">
         <section class="my-works-page">
             <div class="my-works">
-                <div class="section-title">
-                    <h2>Projects</h2>
+                <div class="section-title" style="text-align: center;">
+                    <h2>My Projects</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div class="col my-works-content text-center"> <!-- Added class "text-center" -->
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
+                                    <div class="card-body text-center">
+                                        <h2>PHP</h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
+                                    <div class="card-body text-center">
+                                        <h2>PHP</h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card" style="width: 20rem;">
+                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
+                                    <div class="card-body text-center">
+                                        <h2>PHP</h2>
                                     </div>
-                                </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
     </div>
     <!-- END OF WORKS PAGE -->
+
+    <!-- CONTACT ME PAGE -->
+    <section class="w-100" style="background-color: #1e1e24;">
+        <div class="container contact-me text-center gap-5 mt-2 d-flex align-items-center justify-content-around" style="min-height: 50rem;">
+            <div class="contact-text text-start" style="font-size: 64px; font-weight: bold;">
+                <p>
+                    Let's chat.<br>
+                    Tell me about the<br>   
+                    project.
+                </p>
+            </div>
+            <div class="white-container">
+                <div class="container-content">
+                    <h6>Send me a message</h6>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="fullname" placeholder="Fullname">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email_address" placeholder="Email address">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Tell me about the project:</label>
+                            <textarea class="form-control text-box" id="message" rows="3"></textarea>
+                        </div>
+                        <div class="contanct-me-btn">
+                            <a href="#" class="send-button">Send</a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <script src="{% static '../static/dependencies/js/bootstrap.bundle.js' %}"></script>
 </body>

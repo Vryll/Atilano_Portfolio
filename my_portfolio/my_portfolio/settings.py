@@ -72,6 +72,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_portfolio.wsgi.application'
 
+AUTH_USER_MODEL = 'backend.User'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -131,3 +133,21 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
+
+AWS_ACCESS_KEY_ID = 'AKIASYNILLDFZHG52JEG '
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'atilanoportfolio'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_LOCATION = 'media'
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+}
+AWS_QUERYSTRING_AUTH = False
+
+AWS_HEADERS = {
+    'Access-Control-Allow-Origin': '*',
+}   
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

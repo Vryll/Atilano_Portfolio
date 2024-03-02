@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Projects</title>
+    <link rel="stylesheet" href="{% static '../static/dependencies/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/admin-navBar.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/admin-projects.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            {% include './components/header/admin_navbar.html' %}
+            <div class="col py-3 content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h2 style="font-weight: bold;">Add Project</h2>
+                        <div class="col">
+                            <div class="container" style="max-width: 700px; margin-top: 120px;">
+                                <form class="border border-2 border-black p-4 shadow rounded-3" action="{% url 'base:admin_projects' %}" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="project_title" class="form-label">Project Title</label>
+                                        <input name="project_title" type="text" class="form-control text-boxes" id="project_title" placeholder="project_title">
+                                
+                                    </div>
+                                      
+                                    <div class="mb-3">
+                                        <label for="project_img" class="form-label">File input</label>
+                                        <input  name="project_img" class="form-control" type="file" id="formFile">
+                                    </div>
+                                      
+                                    <div class="mb-3">
+                                        <label for="project_content" class="form-label">Project Overview</label>
+                                        <textarea name="project_content" class="form-control text-boxes" id="project_content" rows="3"></textarea>
+                                    </div>  
+
+                                    <div class="text-center form-btn">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="submit-btn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 300px;">Save</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static '../static/dependencies/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

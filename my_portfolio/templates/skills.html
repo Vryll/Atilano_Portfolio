@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="{% static '../static/dependencies/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/admin-navBar.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/admin-skills.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            {% include './components/header/admin_navbar.html' %}
+            <div class="col py-3 content">
+                <div class="container-fluid skill-content">
+                    <h2 style="font-weight: bold;">Add Personal Skills</h2>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6">
+                            <form class="border border-2 border-black p-4 shadow rounded-3" action="{% url 'base:admin_skills' %}" method="POST" enctype="multipart/form-data" style="margin-top: 150px;">
+                                {% csrf_token %}
+                                <div class="container skill-container">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="skill_name" class="form-label">Skills</label>
+                                            <input name="skill_name" class="form-control text-boxes" id="skill_name" placeholder="Skills">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="skill_logo" class="form-label">Default file input example</label>
+                                            <input name="skill_logo" class="form-control" type="file" id="formFile">
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center form-btn">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="submit-btn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 300px;">Save</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static '../static/dependencies/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static '../static/js/skills.js' %}"></script>
+</body>
+</html>

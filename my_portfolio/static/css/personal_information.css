@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #f7f7f2;
+}
+
+.text-boxes {
+    background-color: #f5f4f4;
+    border: 1px solid #1e1e24;
+}
+
+
+
+.content{
+    color: #1e1e24;
+    padding: 20px;
+    height: 100%;
+}
+
+.content h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    margin-bottom: 70px;
+}
+
+.label{
+    margin-bottom: 10px;
+}
+
+h2{
+    font-weight: bold;
+}
+
+
+  

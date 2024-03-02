@@ -1,0 +1,61 @@
+.contact-me-page{
+    height: 100vh;
+    flex: 1;
+}
+
+
+.contact-text{
+    color: #f7f7f2;
+}
+
+.white-container {
+    margin-top: 50px;
+    text-align: left;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.text-box{
+    height: 250px;
+}
+
+.send-button {
+    margin-left: 90px;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #1e1e24;
+    color: #f7f7f2;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.circular-button:hover {
+    background-color: #000;
+}
+
+.container-content h6{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-label{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+

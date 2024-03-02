@@ -1,7 +1,7 @@
-.container {
+/* .container {
     display: flex;
-    justify-content: flex-start;
-}
+    align-items: center;
+} */
 
 .my-skills-page{
     height: 100vh;
@@ -14,6 +14,23 @@
     color: #f7f7f2;
     background-color: #1e1e24;
 }
+
+.skill-img {
+    margin-left: 62px;
+    margin-top: 10px;
+    align-items: center;
+    width: 190px; /* Set the width of the image */
+    height: 150px; /* Set the height of the image */
+}
+
+.section-title h2{
+    font-weight: bold;
+    font-size: 42px;
+
+}
+
+
+
 
 
 @media (min-width: 576px){
