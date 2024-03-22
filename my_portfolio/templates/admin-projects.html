@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static '../static/dependencies/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static '../static/css/admin-navBar.css' %}">
     <link rel="stylesheet" href="{% static '../static/css/admin-projects.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/my-skills.css' %}">
 </head>
 <body>
     <div class="container-fluid">
@@ -22,28 +23,126 @@
                                 <form class="border border-2 border-black p-4 shadow rounded-3" action="{% url 'base:admin_projects' %}" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="mb-3">
-                                        <label for="project_title" class="form-label">Project Title</label>
-                                        <input name="project_title" type="text" class="form-control text-boxes" id="project_title" placeholder="project_title">
-                                
+                                        <label for="project_profile" class="form-label">Image Previews</label>
+                                        <input  name="project_profile" class="form-control" type="file" id="project_profile">
                                     </div>
-                                      
+
                                     <div class="mb-3">
-                                        <label for="project_img" class="form-label">File input</label>
-                                        <input  name="project_img" class="form-control" type="file" id="formFile">
+                                        <label for="project_title" class="form-label">Project Title</label>
+                                        <input name="project_title" type="text" class="form-control text-boxes" id="project_title" placeholder="Enter your project title">
                                     </div>
-                                      
+
                                     <div class="mb-3">
                                         <label for="project_content" class="form-label">Project Overview</label>
                                         <textarea name="project_content" class="form-control text-boxes" id="project_content" rows="3"></textarea>
                                     </div>  
-
+                                      
+                                    <div class="mb-3">
+                                        <label for="project_image" class="form-label">Image Upload</label>
+                                        <input  name="project_image" class="form-control" type="file" id="project_image" multiple>
+                                    </div>
+                                      
                                     <div class="text-center form-btn">
                                         <div class="d-flex justify-content-center">
-                                            <div class="submit-btn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 300px;">Save</div>
+                                            <button type="submit" class="submit-btn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 300px;">Save</button>
                                         </div>
                                     </div>
                                 </form>
                             </div> 
+                        </div>
+
+                        <!-- LIST OF PROJECTS -->
+                        <div style="margin-top: 50px;">
+                            <div class="container">
+                                <h2 style="font-weight: bold;">List of Projects:</h2>
+                                <div class="row">
+                                    {% for project_data in project %}
+                                        <div class="col">
+                                            <div class="card" style="width: 20rem;">
+                                                <img src="{{ project_data.project_profile.url }}" class="card-img-top skill-img" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h4>{{ project_data.project_title }}</h4>
+                                                    <div class="d-flex flex-column" style="margin-top: 20px;">
+                                                        <button id="updateBtn" class="btn custom-btn rounded-pill mb-2" style="background-color: #f5f4f4; color: #1e1e24;" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ project_data.id }}">Update</button>
+                                                        <button id="deleteBtn" class="btn custom-btn rounded-pill" style="background-color: #f5f4f4; color: #1e1e24; margin-top: 10px;" data-bs-toggle="modal" data-bs-target="#delstaticBackdrop{{ project_data.id }}">Delete</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                     <!--Update Modal -->
+                                     <div class="modal fade" id="staticBackdrop{{ project_data.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Project</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{% url 'base:admin_projects' %}" method="POST" enctype="multipart/form-data">
+                                                        {% csrf_token %}
+
+                                                        <input type="hidden" name="project_id" value="{{ project_data.id }}">
+                                                        <div class="mb-3">
+                                                            <label for="project_profile" class="form-label">Image Previous</label>
+                                                            <input  name="project_profile" class="form-control" type="file" id="project_profile">
+                                                        </div>
+                    
+                                                        <div class="mb-3">
+                                                            <label for="project_title" class="form-label">Project Title</label>
+                                                            <input name="project_title" type="text" class="form-control text-boxes" id="project_title" placeholder="Enter your project title">
+                                                        </div>
+                    
+                                                        <div class="mb-3">
+                                                            <label for="project_content" class="form-label">Project Overview</label>
+                                                            <textarea name="project_content" class="form-control text-boxes" id="project_content" rows="3"></textarea>
+                                                        </div>  
+                                                          
+                                                        <div class="mb-3">
+                                                            <label for="project_image" class="form-label">Image Upload</label>
+                                                            <input  name="project_image" class="form-control" type="file" id="project_image" multiple>
+                                                        </div>
+                                                        
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn cancelBtn" data-bs-dismiss="modal" style="border-radius: 20px; background-color: #f5f4f4; color: #1e1e24; padding: 10px 20px; cursor: pointer; width: 110px; border: #1e1e24 solid 1px;">Cancel</button>
+                                                            <button type="submit" class="btn updateBtn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 110px;">Update</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Delete Modal -->
+                                    <div class="modal fade" id="delstaticBackdrop{{ project_data.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Project</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{% url 'base:delete_projects' %}" method="POST">
+                                                        {% csrf_token %}
+
+                                                        <input type="hidden" name="project_id" value="{{ project_data.id }}">
+                                                        <p>Are you sure you want to delete this Project</p>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn cancelBtn" data-bs-dismiss="modal" style="border-radius: 20px; background-color: #f5f4f4; color: #1e1e24; padding: 10px 20px; cursor: pointer; width: 110px; border: #1e1e24 solid 1px;">Cancel</button>
+                                                            <button type="submit" class="btn deleteBtn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 110px;">Delete</button>
+                                                        </div>
+                                                    </form>
+                                                    
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

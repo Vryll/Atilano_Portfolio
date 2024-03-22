@@ -28,10 +28,21 @@
     <!-- HOME PAGE -->
     <div class="container">
         <section class="home-page">
-            <div class="row home-text">
-                <div class="col-md-6 order-md-1 order-2 mx-auto">
+            <div class="icons d-flex flex-row mb-3 flex-column justify-content-center">
+                {% for data in user %}
+                    <a href="{{ data.facebook_link }}"><img src="../media/icons/facebook.png" style="height: auto; width: 25px; margin-bottom: 10px;"></img></a>
+                    <a href="{{ data.email }}"><img src="../media/icons/gmail.png" style="height: auto; width: 25px; margin-bottom: 10px;"></img></a>
+                    <a href="{{ data.linkedin_link }}"><img src="../media/icons/linkedin.png" style="height: auto; width: 25px; margin-bottom: 10px;"></img></a>
+                    <a href="{{ data.github_link }}"><img src="../media/icons/github.png" style="height: auto; width: 25px; margin-bottom: 10px;"></img></a> 
+                {% endfor %}
+            </div>
+            <div class="row home-text align-items-center">
+                
+                <div class="col-md-5 order-md-1 order-2 mx-auto">
                     <!-- Content for the first column -->
-                    <h2>Hey There! I'm Vryll</h2>
+                    {% for user_data in user %}
+                    <h2>Hey There! I'm {{user_data.first_name}}</h2>
+                    {% endfor %}
                     <h3>&lt; Python Backend Developer &gt;</Python></h3>
                     <p>“Highly motivated IT student specializing 
                         in backend development. Adaptable to diverse 
@@ -41,12 +52,12 @@
                     </p>
                     
                     <div class="home-btn">
-                        <a href="#" class="btn">Learn More About Me</a>
+                        <a href="#about-me" class="btn">Learn More About Me</a>
                     </div>
                 </div>
                 <div class="col-md-6 order-md-2 order-1 mx-auto">
                     <!-- Content for the second column -->
-                    <img src="../media/home-page-img.png" class="img-fluid img" alt="Atilano-image">
+                    <img src="../media/images/home-page-img.png" class="img-fluid img" alt="Atilano-image">
                 </div>
 
             </div>
@@ -57,26 +68,25 @@
 
     <!-- ABOUT ME PAGE -->
     <div class="w-100 about-me-container" style="background-color: #1e1e24; min-height: 50rem;" >
-        <section class="about-me-page">
+        <section class="about-me-page" id="about-me">
             <div class="about-me">
                 <div class="container text-center">
+                    {% for data in user %}
                     <div class="row">
                       <div class="col">
-                        <img src="../media/Atilanond.png" class="img-fluid about-me-img" alt="Atilano-image">
+                        <img src="{{ data.image_profile.url }}" class="img-fluid about-me-img" alt="Atilano-image">
                       </div>
                       <div class="col about-me-content">
                         <h2>About Me</h2>
-                        <h3>Hi! I'm Vryll Atilano</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            anim id est laborum.
-                        </p>
-                        <div class="home-btn">
-                            <a href="#"><div class="dl-cv-btn">Download CV</div></a>
-                        </div>
+                        
+                            <h3>Hi! {{ data.first_name }} {{data.last_name}}</h3>
+                            <p style="text-align: justify;">{{ data.about_me_context}}
+                            </p>
+                        
+                            <div class="home-btn">
+                                <a href="{{ data.resume.url }}"><div class="dl-cv-btn">View resume</div></a>
+                            </div>
+                        {% endfor %}
                       </div>
                     </div>
                   </div>
@@ -87,41 +97,30 @@
 
     <!-- MY SKILLS PAGE-->
     <div class="container">
-        <section class="my-skills-page">
+        <section class="my-skills-page" id="skills">
             <div class="section-title" style="text-align: center;">
                 <h2>My Skills</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p style="margin-top: 20px;">
+                   Through years of dedicated learning and professional experience as an IT developer, 
+                   I've cultivated a comprehensive skillset. This expertise encompasses both technical 
+                   proficiency in programming languages and frameworks, along with strong soft skills in 
+                   communication, problem-solving, and teamwork. This well-rounded foundation allows me to 
+                   effectively translate complex requirements into efficient and innovative software solutions.
+                </p>
             </div>
             <div class="col text-center my-skills-content"> <!-- Added class "text-center" -->
                 <div class="container" >
                     <div class="row">
+                        {% for skills_data in skill %}
                         <div class="col">
                             <div class="card" style="width: 20rem;">
-                                <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
+                                <img src="{{ skills_data.skill_logo.url }}" class="card-img-top  skill-img" alt="...">
                                 <div class="card-body text-center">
-                                    <h4>PHP</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h4>{{ skills_data.skill_name }}</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../media/python.png" class="card-img-top skill-img" alt="...">
-                                <div class="card-body">
-                                    <h4>PYTHON</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 20rem;">
-                                <img src="../media/flutter.png" class="card-img-top skill-img" alt="...">
-                                <div class="card-body">
-                                    <h4>FLUTTER</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -132,42 +131,67 @@
 
     <!-- WORKS PAGE -->
     <div class="container">
-        <section class="my-works-page">
+        <section class="my-works-page" id="works">
             <div class="my-works">
                 <div class="section-title" style="text-align: center;">
                     <h2>My Projects</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>
+                        My passion for innovation fuels my software development experience.  
+                        This translates into a relentless pursuit of crafting exceptional, 
+                        user-friendly solutions across various projects.  For example, I've 
+                        built user-friendly e-commerce platforms and real-time data processing 
+                        pipelines, all while mastering new technologies to deliver exceptional results. 
+                        Every project is a chance to learn and grow, and this dedication to excellence 
+                        is evident in my meticulous approach, ensuring each line of code contributes to 
+                        a robust final product.
+                    </p>
                 </div>
                 <div class="col my-works-content text-center"> <!-- Added class "text-center" -->
                     <div class="container">
                         <div class="row">
-                            <div class="col">
-                                <div class="card" style="width: 20rem;">
-                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
-                                    <div class="card-body text-center">
-                                        <h2>PHP</h2>
-                                    </div>
+                            {% for project_data in project %}
+                            <div class="col open-button"  data-id="{{project_data.id}}">  <div class="card" style="width: 20rem;">
+                                <img src="{{ project_data.project_profile.url }}" class="card-img-top skill-img" alt="...">
+                                <div class="card-body text-center">
+                                  <h2>{{ project_data.project_title }}</h2>
+                                </div>
+                              </div>
+                            </div>
+                            
+
+                            <div class="slide-container" id="modal-container{{ project_data.id }}">
+                                <div class="container slide_container_content">
+                                    <h2>Overview of the Project<span id="close-button" class="close-button">x</span></h2>
+                            
+                                    <div id="carouselExampleAutoplaying" class="carousel slide project-images" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            {% for image_data in project_data.project_img.all %}
+                                                <div class="carousel-item active">
+                                                    <img src="{{ image_data.project_image.url }}" class="d-block w-100" alt="..." style="height: 200px; width: 10px; object-fit: contain;">
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Next</span>
+                                        </button>
+                                      </div>
+                            
+                                      <h3 style="margin-top: 50px; margin-bottom: 20px;">{{ project_data.project_title }}</h3>
+                            
+                                      <p style="text-align: justify;">
+                                        {{ project_data.project_content }}
+                                      </p>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card" style="width: 20rem;">
-                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
-                                    <div class="card-body text-center">
-                                        <h2>PHP</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" style="width: 20rem;">
-                                    <img src="../media/php.png" class="card-img-top  skill-img" alt="...">
-                                    <div class="card-body text-center">
-                                        <h2>PHP</h2>
-                                    </div>
-                                </div>  
-                            </div>
+                            <div id="overlay" class="overlay"></div>
+                            {% endfor %}
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -175,7 +199,7 @@
     <!-- END OF WORKS PAGE -->
 
     <!-- CONTACT ME PAGE -->
-    <section class="w-100" style="background-color: #1e1e24;">
+    <section class="w-100" style="background-color: #1e1e24;" id="contact">
         <div class="container contact-me text-center gap-5 mt-2 d-flex align-items-center justify-content-around" style="min-height: 50rem;">
             <div class="contact-text text-start" style="font-size: 64px; font-weight: bold;">
                 <p>
@@ -183,6 +207,19 @@
                     Tell me about the<br>   
                     project.
                 </p>
+                <h6 class="bold-and-large" style="font-size: 24px; font-weight: bold;">Let's work together in a project</h6>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-auto" style="margin-bottom: 12px;">
+                        <img src="../media/icons/email.png" style="height: 25px; width: 30px;" />
+                    </div>
+                    {% for user_data in user %}
+                    <div class="col">
+                        <h6 class="mb-0"><strong>Email me: </strong> <span> {{ user_data.email }}</span></h6>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                
             </div>
             <div class="white-container">
                 <div class="container-content">
@@ -204,17 +241,18 @@
                             <label for="message" class="form-label">Tell me about the project:</label>
                             <textarea class="form-control text-box" id="message" rows="3"></textarea>
                         </div>
-                        <div class="contanct-me-btn">
-                            <a href="#" class="send-button">Send</a>
-                        </div>
-                        
+                        <div class="text-center form-btn">
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="submit-btn" style="border-radius: 20px; background-color: #1e1e24; color: #f5f4f4; padding: 10px 20px; cursor: pointer; width: 300px;">Save</button>
+                            </div>
+                        </div>         
                     </form>
                 </div>
             </div>
         </div>
     </section>
     
-
+    <script src="{% static '../static/js/works-page.js' %}"></script>
     <script src="{% static '../static/dependencies/js/bootstrap.bundle.js' %}"></script>
 </body>
 </html>

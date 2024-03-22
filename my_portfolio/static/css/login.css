@@ -1,0 +1,23 @@
+body{
+    height: 100vh;
+    background-color: #f7f7f2;
+}
+
+.login-card{
+    width: 350px;
+    height: 370px;
+    background-color: #1e1e24;
+    color: #f7f7f2;
+}g
+
+.form-group{
+    margin-bottom: 10px;
+}
+
+.login-btn button{
+    background-color: #f7f7f2;
+    width: 200px;
+}
+
+
+

@@ -5,4 +5,5 @@ from backend.models import *
 admin.site.register(User)
 admin.site.register(Skill)
 admin.site.register(Project)
+admin.site.register(ProjectImage)
 

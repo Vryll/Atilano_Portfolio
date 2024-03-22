@@ -1,4 +1,4 @@
-#gallery {
+/* #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,7 +6,7 @@
   }
 
 .card {
-  max-width: 500px; /* Adjust as needed */
+  max-width: 500px;
   margin: auto;
 }
 
@@ -30,4 +30,20 @@ img {
   height: 50px;
   width: 50px;
   object-fit: cover;
+  
+}
+
+.card {
+  border: 2px solid #1e1e24;
+  border-radius: 10px;
+  color: #f7f7f2;
+  background-color: #1e1e24;
+} */
+
+.card-body {
+  text-align: center;
+  display: flex; /* Add this line */
+  justify-content: center; /* Optional for horizontal centering */
+  align-items: center;
+   /* This aligns buttons vertically */
 }
