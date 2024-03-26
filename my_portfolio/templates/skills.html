@@ -49,9 +49,9 @@
                         <div style="margin-top: 50px;">
                             <div class="container">
                                 <h2 style="font-weight: bold;">List of Skills:</h2>
-                                <div class="row">
+                                <div class="row justify-content-center">
                                     {% for skill_data in skill %}
-                                        <div class="col">
+                                        <div class="col-4 d-flex justify-content-center">
                                             <div class="card" style="width: 20rem; margin-bottom: 30px;">
                                                 <img src="{{ skill_data.skill_logo.url }}" class="card-img-top skill-img" alt="...">
                                                 <div class="card-body text-center">

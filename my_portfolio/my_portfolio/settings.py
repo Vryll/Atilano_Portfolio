@@ -26,6 +26,14 @@ SECRET_KEY = 'django-insecure-%tvsp4#o7p^*q+!(_(ecz#d^y67qmwtjii%+j6b(ald)=&qv*l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = 'hzrg blvn dzyw gusn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backend.smtp.EmailBackend'
+
+
 ALLOWED_HOSTS = []
 
 
@@ -134,9 +142,9 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
 
-AWS_ACCESS_KEY_ID = 'AKIASYNILLDFZHG52JEG '
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'atilanoportfolio'
+AWS_ACCESS_KEY_ID = ' '
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = ''
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 AWS_LOCATION = 'media'
 AWS_DEFAULT_ACL = 'public-read'

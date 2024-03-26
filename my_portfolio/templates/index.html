@@ -110,9 +110,9 @@
             </div>
             <div class="col text-center my-skills-content"> <!-- Added class "text-center" -->
                 <div class="container" >
-                    <div class="row">
+                    <div class="row justify-content-center">
                         {% for skills_data in skill %}
-                        <div class="col">
+                        <div class="col-4 d-flex justify-content-center">
                             <div class="card" style="width: 20rem;">
                                 <img src="{{ skills_data.skill_logo.url }}" class="card-img-top  skill-img" alt="...">
                                 <div class="card-body text-center">
@@ -126,7 +126,6 @@
             </div>
         </section>
     </div>
-    
     <!-- END OF MY SKILLS PAGE -->
 
     <!-- WORKS PAGE -->
@@ -146,11 +145,11 @@
                         a robust final product.
                     </p>
                 </div>
-                <div class="col my-works-content text-center"> <!-- Added class "text-center" -->
+                <div class="col my-works-content text-center">
                     <div class="container">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             {% for project_data in project %}
-                            <div class="col open-button"  data-id="{{project_data.id}}">  <div class="card" style="width: 20rem;">
+                            <div class="col-4 d-flex justify-content-center open-button"  data-id="{{project_data.id}}">  <div class="card" style="width: 20rem;">
                                 <img src="{{ project_data.project_profile.url }}" class="card-img-top skill-img" alt="...">
                                 <div class="card-body text-center">
                                   <h2>{{ project_data.project_title }}</h2>
@@ -224,22 +223,22 @@
             <div class="white-container">
                 <div class="container-content">
                     <h6>Send me a message</h6>
-                    <form>
+                    <form action="" method="POST">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="fullname" placeholder="Fullname">
+                            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Fullname">
                         </div>
 
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="email_address" placeholder="Email address">
+                            <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Email address">
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                         </div>
 
                         <div class="mb-3">
                             <label for="message" class="form-label">Tell me about the project:</label>
-                            <textarea class="form-control text-box" id="message" rows="3"></textarea>
+                            <textarea class="form-control text-box" id="message" name="message" rows="3"></textarea>
                         </div>
                         <div class="text-center form-btn">
                             <div class="d-flex justify-content-center">
